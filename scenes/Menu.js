@@ -1,7 +1,7 @@
 import {restartbutton} from "../components/restartbutton.js"
-export default class end extends Phaser.Scene {
+export default class menu extends Phaser.Scene {
     constructor() { 
-      super("End");
+      super("Menu");
       this.restartbutton= new restartbutton(this);
     }
     
@@ -13,6 +13,10 @@ export default class end extends Phaser.Scene {
         this.fondo = this.add.image(400, 300, "background")
         this.fondo.setScale(7);
         this.restartbutton.create();
+        this.add.text(50, 50, `iniciar juego`, {
+            fontSize: "60px",
+           fill: "#ffff",
+          });
       }
       
 }

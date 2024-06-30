@@ -1,5 +1,3 @@
-
-
 export default class game extends Phaser.Scene {
   constructor() { 
     super("Game");
@@ -91,7 +89,7 @@ export default class game extends Phaser.Scene {
   update() {
     if (this.timer <= 0) {
       // Detener el juego o realizar alguna acción cuando el tiempo se agota
-      this.scene.start('End.js', { puntos: this.score });
+      this.showEnd();
     }
     if (this.cursor.left.isDown) {
       this.player.setVelocityX(-160);
@@ -110,9 +108,6 @@ export default class game extends Phaser.Scene {
   
 
   onSecond (){
-    //if (this.gameOver) {
-     // return;
-    //}
     const tipos = ["hamburguesa","estrella"];
     const tipo = Phaser.Math.RND.pick(tipos);
     let recolectables = this.recolectables.create(
@@ -159,7 +154,13 @@ export default class game extends Phaser.Scene {
     updateTimer() {
       this.timer -= 1;
       this.timerText.setText(`Tiempo restante: ${this.timer}`);
+
   }
+  showEnd(){
+    this.scene.start("End");
+  }
+
+
 }
 
 
