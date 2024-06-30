@@ -2,12 +2,12 @@
 
 export default class game extends Phaser.Scene {
   constructor() { 
-    super("game");
+    super("Game");
   }
 
   init() {
     this.gameOver = false;
-    this.timer = 30;
+    this.timer = 10;
     this.score = 0;
     this.shapes = {
       hamburguesa: { points: 10, count: 0 },
@@ -57,11 +57,16 @@ export default class game extends Phaser.Scene {
       callbackScope: this,
       loop: true,
     });
+    this.time.addEvent({
+      delay: 1000, // 1 segundo
+      callback: this.updateTimer,
+      callbackScope: this,
+      loop: true,
+    });
 
-
-    this.timerText = this.add.text(10, 10, `tiempo restante: ${this.timer}`, {
+    this.timerText = this.add.text(10, 10, `Tiempo restante: ${this.timer}`, {
       fontSize: "40px",
-      fill: "#ffff",
+     fill: "#ffff",
     });
 
     this.scoreText = this.add.text(
@@ -84,15 +89,10 @@ export default class game extends Phaser.Scene {
   
 
   update() {
-    if (this.gameOver && this.r.isDown) {
-      this.scene.restart();
+    if (this.timer <= 0) {
+      // Detener el juego o realizar alguna acción cuando el tiempo se agota
+      this.scene.start('End.js', { puntos: this.score });
     }
-    if (this.gameOver) {
-      this.physics.pause();
-      this.timerText.setText("game over");
-      return;
-    }
-
     if (this.cursor.left.isDown) {
       this.player.setVelocityX(-160);
       // play animation
@@ -110,9 +110,9 @@ export default class game extends Phaser.Scene {
   
 
   onSecond (){
-    if (this.gameOver) {
-      return;
-    }
+    //if (this.gameOver) {
+     // return;
+    //}
     const tipos = ["hamburguesa","estrella"];
     const tipo = Phaser.Math.RND.pick(tipos);
     let recolectables = this.recolectables.create(
@@ -156,7 +156,11 @@ export default class game extends Phaser.Scene {
       `Puntaje: ${this.score}`
         
     );  }
-  
+    updateTimer() {
+      this.timer -= 1;
+      this.timerText.setText(`Tiempo restante: ${this.timer}`);
+  }
 }
+
 
 

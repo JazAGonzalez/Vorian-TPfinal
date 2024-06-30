@@ -1,6 +1,6 @@
 export default class game extends Phaser.Scene {
     constructor() { 
-      super("end");
+      super("End");
     }
     init(data) {
         this.score = data.score || 0;

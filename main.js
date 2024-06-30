@@ -1,5 +1,5 @@
-import game from "./scenes/game.js";
-
+import Game from "./scenes/game.js";
+import End from "./scenes/end.js";
 
 const config = {
   type: Phaser.AUTO,
@@ -20,7 +20,7 @@ const config = {
     },
   },
   
-  scene: [game,end],
+  scene: [Game,End],
 };
 
 window.game = new Phaser.Game(config);
