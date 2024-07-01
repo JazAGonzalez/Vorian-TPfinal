@@ -4,11 +4,11 @@ export class restartbutton {
     }
 
     preload(){
-        this.releatedScene.load.image("button","../public/assets/estrella.png");  
+        this.releatedScene.load.image("button","../public/assets/button.png");  
     }
 
     create(){
-        this.startButton= this.releatedScene.add.image (400, 230, "button").setInteractive()
+        this.startButton= this.releatedScene.add.image (667, 375, "button").setScale(4).setInteractive()
         
 
         this.startButton.on ("pointerdown",()=>{ 

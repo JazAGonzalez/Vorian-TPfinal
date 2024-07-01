@@ -7,16 +7,16 @@ export default class menu extends Phaser.Scene {
     
       preload(){
         this.load.image("background", "../public/assets/fondo.png");
+        this.load.image("titulo", "../public/assets/titulo.png");
+        
         this.restartbutton.preload();
       }
       create() {
         this.fondo = this.add.image(400, 300, "background")
         this.fondo.setScale(7);
         this.restartbutton.create();
-        this.add.text(50, 50, `iniciar juego`, {
-            fontSize: "60px",
-           fill: "#ffff",
-          });
+      
+        this.titulo=this.add.image(380,600, "titulo").setScale(5);
       }
       
 }
