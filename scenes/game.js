@@ -85,9 +85,14 @@ export default class game extends Phaser.Scene {
     // Maneja el movimiento del jugador
     if (this.cursor.left.isDown) {
       this.player.setVelocityX(-160);
+      this.player.setScale(-1,1);
+      this.player.body.offset.x = 220;
       this.player.anims.play("left", true);
+
     } else if (this.cursor.right.isDown) {
       this.player.setVelocityX(160);
+      this.player.setScale(1,1);
+      this.player.body.offset.x = 75;
       this.player.anims.play("right", true);
     } else {
       this.player.setVelocityX(0);
