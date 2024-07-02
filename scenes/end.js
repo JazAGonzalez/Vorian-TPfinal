@@ -1,5 +1,5 @@
 import {restartbutton} from "../components/restartbutton.js"
-export default class end extends Phaser.Scene {
+export default class End extends Phaser.Scene {
     constructor() { 
       super("End");
       this.restartbutton= new restartbutton(this);
