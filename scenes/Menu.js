@@ -6,8 +6,8 @@ export default class menu extends Phaser.Scene {
     }
     
       preload(){
-        this.load.image("background", "../public/assets/fondo.png");
-        this.load.image("titulo", "../public/assets/titulo.png");
+        this.load.image("background", "/public/assets/fondo.png");
+        this.load.image("titulo", "/public/assets/titulo.png");
         
         this.restartbutton.preload();
       }
@@ -16,6 +16,7 @@ export default class menu extends Phaser.Scene {
         this.fondo.setScale(7);
         this.restartbutton.create();
       
+
         this.titulo=this.add.image(380,600, "titulo").setScale(5);
       }
       

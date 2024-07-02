@@ -1,6 +1,6 @@
 import Menu from "./scenes/Menu.js";
 import Game from "./scenes/game.js";
-import End from "./scenes/end.js";
+import End from "./scenes/End.js";
 
 
 const config = {

@@ -6,7 +6,7 @@ export default class end extends Phaser.Scene {
     }
     
       preload(){
-        this.load.image("background", "../public/assets/fondo.png");
+        this.load.image("background", "/public/assets/fondo.png");
         this.restartbutton.preload();
       }
       create() {

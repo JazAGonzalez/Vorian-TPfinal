@@ -6,7 +6,7 @@ export default class game extends Phaser.Scene {
   init() {
     // Inicialización de variables del juego
     this.gameOver = false;
-    this.timer = 20;
+    this.timer = 60;
     this.score = 0;
     this.shapes = {
       hamburguesa: { points: 10, count: 0 },
@@ -16,11 +16,11 @@ export default class game extends Phaser.Scene {
 
   preload() {
     // Carga los activos del juego
-    this.load.image("fondo", "../public/assets/fondo.png");
-    this.load.image("personaje", "../public/assets/Player.png");
-    this.load.image("enemigo", "../public/assets/enemigo.png");
-    this.load.image("hamburguesa", "../public/assets/comidaGalactica.png");
-    this.load.image("estrella", "../public/assets/estrella.png");
+    this.load.image("fondo", "/public/assets/fondo.png");
+    this.load.image("personaje", "/public/assets/Player.png");
+    this.load.image("enemigo", "/public/assets/enemigo.png");
+    this.load.image("hamburguesa", "/public/assets/comidaGalactica.png");
+    this.load.image("estrella", "/public/assets/estrella.png");
   }
 
   create() {
