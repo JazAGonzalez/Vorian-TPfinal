@@ -4,7 +4,7 @@ export class restartbutton {
     }
 
     preload(){
-        this.releatedScene.load.image("button","../public/assets/button.png");  
+        this.releatedScene.load.image("button","./public/assets/button.png");  
     }
 
     create(){
