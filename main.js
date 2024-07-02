@@ -1,5 +1,5 @@
 import Menu from "./scenes/Menu.js";
-import Game from "./scenes/game.js";
+import Game from "./scenes/Game.js";
 import End from "./scenes/End.js";
 
 
